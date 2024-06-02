@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  parking_management_db:
+    image: postgres:16
+    container_name: parking_management_db
+    environment:
+      POSTGRES_DB: parking_management_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - parking_management_data:/var/lib/postgresql/data
+      - ./init/parking_management_db_init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  users_db:
+    image: postgres:16
+    container_name: users_db
+    environment:
+      POSTGRES_DB: users_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
+    volumes:
+      - users_data:/var/lib/postgresql/data
+      - ./init/users_db_init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  reservations_db:
+    image: postgres:16
+    container_name: reservations_db
+    environment:
+      POSTGRES_DB: reservations_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5434:5432"
+    volumes:
+      - reservations_data:/var/lib/postgresql/data
+      - ./init/reservations_db_init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  memberships_db:
+    image: postgres:16
+    container_name: memberships_db
+    environment:
+      POSTGRES_DB: memberships_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5435:5432"
+    volumes:
+      - memberships_data:/var/lib/postgresql/data
+      - ./init/memberships_db_init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  parking_management_data:
+  users_data:
+  reservations_data:
+  memberships_data:
