@@ -7,8 +7,6 @@ import org.springframework.stereotype.Component;
 public class Globals {
     public static final String apiVersion = "com/microservice/reservations/microservice_reservations/api/v1/";
 
-    public static final String reCaptchaSiteSecret = "6LchpbIpAAAAALil_-76o5mL_8nklA0tuSZZrvMa";
-
     public static final String[] httpOkStatus = HttpStatus.OK.toString().split(" "); // Status 200
 
     public static final String[] httpSuccessfulCreatedStatus = HttpStatus.CREATED.toString().split(" "); // Status 201
