@@ -23,6 +23,9 @@
         <module>microservice-student</module>
         <module>microservice-course</module>
         <module>microservice-parking-management</module>
+        <module>microservice-reservations</module>
+        <module>microservice-memberships</module>
+        <module>microservice-users</module>
     </modules>
 
     <properties>
