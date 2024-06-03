@@ -22,6 +22,7 @@
         <module>microservice-config</module>
         <module>microservice-student</module>
         <module>microservice-course</module>
+        <module>microservice-parking-management</module>
     </modules>
 
     <properties>
