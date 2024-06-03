@@ -1,0 +1,21 @@
+### Obtener todas las reservas
+GET http://localhost:8080/api/reservations
+
+### Obtener una reserva por ID
+GET http://localhost:8080/api/reservations/1
+
+### Crear una nueva reserva
+POST http://localhost:8080/api/reservations
+Content-Type: application/json
+
+{
+  "users_id": 1,
+  "vehicles_id": 1,
+  "spots_id": 1,
+  "scheduled_entry": "2024-06-01T10:00:00",
+  "scheduled_exit": "2024-06-01T12:00:00",
+  "status": "SCHEDULED"
+}
+
+### Eliminar una reserva por ID
+DELETE http://localhost:8080/api/reservations/1

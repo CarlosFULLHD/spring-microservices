@@ -1,0 +1,20 @@
+### Obtener todos los usuarios
+GET http://localhost:8080/api/users
+
+### Obtener un usuario por ID
+GET http://localhost:8080/api/users/1
+
+### Crear un nuevo usuario
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "John",
+  "last_name": "Doe",
+  "email": "john.doe@example.com",
+  "password": "password123",
+  "pin_code": "7890"
+}
+
+### Eliminar un usuario por ID
+DELETE http://localhost:8080/api/users/1

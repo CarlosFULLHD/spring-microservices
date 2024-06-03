@@ -1,0 +1,18 @@
+### Obtener todos los estacionamientos
+GET http://localhost:8080/api/parkings
+
+### Obtener un estacionamiento por ID
+GET http://localhost:8080/api/parkings/1
+
+### Crear un nuevo estacionamiento
+POST http://localhost:8080/api/parkings
+Content-Type: application/json
+
+{
+  "name": "Parking Oeste",
+  "location": "Zona Oeste",
+  "total_spots": 20
+}
+
+### Eliminar un estacionamiento por ID
+DELETE http://localhost:8080/api/parkings/1

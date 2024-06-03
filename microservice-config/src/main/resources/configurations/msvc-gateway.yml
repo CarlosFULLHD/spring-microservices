@@ -10,6 +10,22 @@ spring:
         locator:
           enabled: true
       routes:
+        - id: parking-service
+          uri: 'http://localhost:8081'
+          predicates:
+            - Path=/api/parkings/**
+        - id: user-service
+          uri: 'http://localhost:8082'
+          predicates:
+            - Path=/api/users/**
+        - id: reservation-service
+          uri: 'http://localhost:8083'
+          predicates:
+            - Path=/api/reservations/**
+        - id: membership-service
+          uri: 'http://localhost:8084'
+          predicates:
+            - Path=/api/memberships/**
         - id: students
           uri: 'http://localhost:8090'
           predicates:
