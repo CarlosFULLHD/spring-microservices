@@ -42,6 +42,7 @@ public class MembershipBl {
     public List<MembershipFeatureEntity> findAllFeaturesByMembershipId(Long membershipId) {
         return membershipFeatureRepository.findAllByMembershipId(membershipId);
     }
-
-    // Más métodos según sea necesario
+    public List<MembershipEntity> findByUserId(Long userId) {
+        return membershipRepository.findByUserId(userId);
+    }
 }

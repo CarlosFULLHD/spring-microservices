@@ -1,26 +1,24 @@
 package com.microservice.memberships.microservice_memberships.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="memberships")
-@NoArgsConstructor
+@Table(name = "memberships")
 @Data
+@NoArgsConstructor
 public class MembershipEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_membership")
     private Long id;
 
     @Column(name = "user_id", nullable = false)
     private Long userId;
 
-    @Column(name = "type", nullable = false)
+    @Column(nullable = false)
     private String type;
 
     @Column(name = "start_date", nullable = false)
@@ -29,12 +27,23 @@ public class MembershipEntity {
     @Column(name = "end_date", nullable = false)
     private LocalDateTime endDate;
 
-    @Column(name = "status", nullable = false)
+    @Column(nullable = false)
     private String status;
 
-    @Column(name = "created_at", nullable = true, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "created_at", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at", nullable = true, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "updated_at", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime updatedAt;
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
 }

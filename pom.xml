@@ -20,8 +20,6 @@
         <module>microservice-gateway</module>
         <module>microservice-eureka</module>
         <module>microservice-config</module>
-        <module>microservice-student</module>
-        <module>microservice-course</module>
         <module>microservice-parking-management</module>
         <module>microservice-reservations</module>
         <module>microservice-memberships</module>

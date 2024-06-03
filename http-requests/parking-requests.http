@@ -9,9 +9,9 @@ POST http://localhost:8080/api/parkings
 Content-Type: application/json
 
 {
-  "name": "Parking Oeste",
-  "location": "Zona Oeste",
-  "total_spots": 20
+  "name": "Parking Oeste2",
+  "location": "Zona Oeste2",
+  "totalSpots": 14
 }
 
 ### Eliminar un estacionamiento por ID

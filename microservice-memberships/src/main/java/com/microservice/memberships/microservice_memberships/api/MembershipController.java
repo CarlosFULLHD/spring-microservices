@@ -51,4 +51,10 @@ public class MembershipController {
         List<MembershipFeatureEntity> features = membershipBl.findAllFeaturesByMembershipId(membershipId);
         return ResponseEntity.ok(features);
     }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<MembershipEntity>> getMembershipsByUserId(@PathVariable Long userId) {
+        return ResponseEntity.ok(membershipBl.findByUserId(userId));
+    }
+
 }

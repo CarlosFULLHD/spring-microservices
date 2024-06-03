@@ -9,13 +9,14 @@ POST http://localhost:8080/api/reservations
 Content-Type: application/json
 
 {
-  "users_id": 1,
-  "vehicles_id": 1,
-  "spots_id": 1,
-  "scheduled_entry": "2024-06-01T10:00:00",
-  "scheduled_exit": "2024-06-01T12:00:00",
+  "userId": 1,
+  "vehicleId": 1,
+  "spotId": 1,
+  "scheduledEntry": "2024-06-01T10:00:00",
+  "scheduledExit": "2024-06-01T12:00:00",
   "status": "SCHEDULED"
 }
+
 
 ### Eliminar una reserva por ID
 DELETE http://localhost:8080/api/reservations/1

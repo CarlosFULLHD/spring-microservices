@@ -1,6 +1,7 @@
 package com.microservice.users.microservice_users.api;
 
 import com.microservice.users.microservice_users.bl.UserBl;
+import com.microservice.users.microservice_users.dto.MembershipDTO;
 import com.microservice.users.microservice_users.entity.RoleEntity;
 import com.microservice.users.microservice_users.entity.UserEntity;
 import com.microservice.users.microservice_users.entity.VehicleEntity;
@@ -44,6 +45,12 @@ public class UserController {
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userBl.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/{id}/memberships")
+    public ResponseEntity<List<MembershipDTO>> getUserMemberships(@PathVariable Long id) {
+        List<MembershipDTO> memberships = userBl.getMembershipsByUserId(id);
+        return ResponseEntity.ok(memberships);
     }
 
     @GetMapping("/{userId}/roles")

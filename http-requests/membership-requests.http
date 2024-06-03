@@ -1,20 +1,23 @@
+### Ejemplo con Feign
+GET http://localhost:8080/api/users/1/memberships
+
+### Asignar - Crear una nueva membresia a usuario
+POST http://localhost:8080/api/memberships
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "type": "Gold",
+  "startDate": "2024-01-01T00:00:00",
+  "endDate": "2024-12-31T23:59:59",
+  "status": "Active"
+}
+
 ### Obtener todas las membresías
 GET http://localhost:8080/api/memberships
 
 ### Obtener una membresía por ID
 GET http://localhost:8080/api/memberships/1
-
-### Crear una nueva membresía
-POST http://localhost:8080/api/memberships
-Content-Type: application/json
-
-{
-  "user_id": 1,
-  "type": "Gold",
-  "start_date": "2024-01-01T00:00:00",
-  "end_date": "2024-12-31T23:59:59",
-  "status": "Active"
-}
 
 ### Eliminar una membresía por ID
 DELETE http://localhost:8080/api/memberships/1
